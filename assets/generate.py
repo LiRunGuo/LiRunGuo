@@ -1,4 +1,12 @@
-"""Generate the animated header and typing SVGs for the GitHub profile README."""
+"""Generate the animated header and typing SVGs for the GitHub profile README.
+
+Usage, from the repository root:
+
+    python3 assets/generate.py assets
+
+Edit the header's third line (PR count, status) or LINES (the typed
+phrases) below, then rerun and commit both SVGs.
+"""
 import os
 import sys
 from xml.sax.saxutils import escape
