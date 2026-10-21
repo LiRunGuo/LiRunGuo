@@ -20,7 +20,7 @@
 - ⚙️ I work between the model and the machine: MoE inference and expert streaming, KV-cache compression, distributed training and RL rollout, GPU compilers and kernels.
 - 🔬 Upstream-first: reproduce the failure in the real stack, fix it there, and ship the regression test with before/after numbers.
 
-### 🛠️ Merged upstream — 21 PRs across 13 projects
+### 🛠️ Merged upstream — 22 PRs across 14 projects
 
 <p align="center">
   <a href="https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"></a>
@@ -34,6 +34,7 @@
   <a href="https://github.com/triton-lang/triton/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/Triton-6E40C9?style=for-the-badge" alt="Triton"></a>
   <a href="https://github.com/apache/tvm/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/Apache_TVM-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache TVM"></a>
   <a href="https://github.com/verl-project/verl/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/verl-7C3AED?style=for-the-badge" alt="verl"></a>
+  <a href="https://github.com/NVIDIA/Megatron-LM/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/Megatron--LM-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="Megatron-LM"></a>
   <a href="https://github.com/LMCache/LMCache/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/LMCache-0EA5E9?style=for-the-badge" alt="LMCache"></a>
   <a href="https://github.com/vllm-project/vllm-omni/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/vLLM--Omni-1D4ED8?style=for-the-badge" alt="vLLM-Omni"></a>
   <a href="https://github.com/JustVugg/colibri/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/colibri-10B981?style=for-the-badge" alt="colibri"></a>
@@ -65,14 +66,16 @@
 | Project | What I fixed | PR |
 | --- | --- | --- |
 | **DeepSpeed** | ZeRO-3 rollout deadlock from unsynchronized generation stopping; Hybrid Engine falls back on unsupported architectures (H200, MI250) | [#8264](https://github.com/deepspeedai/DeepSpeed/pull/8264) · [#8265](https://github.com/deepspeedai/DeepSpeed/pull/8265) |
+| **Megatron-LM** | MoE checkpoint shards with prepended layer/expert axes take the DCP checkpointable path instead of enumerating the global shard grid: state-dict conversion 165× faster, async-save blocking 3.4× shorter on 8×H200, identical metadata | [#7287](https://github.com/NVIDIA/Megatron-LM/pull/7287) |
 | **verl** | FSDP value-head critic loading restored after TRL relocated its value-head classes | [#7625](https://github.com/verl-project/verl/pull/7625) |
 
 Every fix ships with a reproducer or regression test. Write-ups for each one are in the [portfolio](https://runguoli.com/portfolio/).
 
 ### 📝 Papers
 
+- **Certified Sparse Attention** — [*Certified Sparse Attention via Perturbed Retrieval*](https://arxiv.org/abs/2610.24991) — single author, arXiv 2026
 - **BreadthKV** — [*Spend Bytes on Breadth: Precision–Count Trade-offs for Decode-Time KV Compression in Long Chain-of-Thought Reasoning*](https://arxiv.org/abs/2610.05685) — single author, arXiv 2026
-- **FinVault** — [*Benchmarking Financial Agent Safety in Execution-Grounded Environments*](https://arxiv.org/abs/2601.07853) — co-first author, arXiv 2026
+- **FinVault** — [*Benchmarking Financial Agent Safety in Execution-Grounded Environments*](https://arxiv.org/abs/2601.07853) — co-first author, arXiv 2026 · [code](https://github.com/aifinlab/FinVault)
 - **RVCFT** — [*Reasoning-Visual Critical Token Fine-Tuning for Multimodal Reasoning*](https://runguoli.com/publication/2026-07-rvcft) — co-first author, under review at AAAI 2027
 - **VeriBRT** — [*Plan-Guided, Evidence-Based Automated Bug Reproduction*](https://runguoli.com/publication/2026-07-veribrt) — co-first author, under review at ICSE 2027
 
