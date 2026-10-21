@@ -20,7 +20,7 @@
 - ⚙️ I work between the model and the machine: MoE inference and expert streaming, KV-cache compression, distributed training and RL rollout, GPU compilers and kernels.
 - 🔬 Upstream-first: reproduce the failure in the real stack, fix it there, and ship the regression test with before/after numbers.
 
-### 🛠️ Merged upstream — 20 PRs across 13 projects
+### 🛠️ Merged upstream — 21 PRs across 13 projects
 
 <p align="center">
   <a href="https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"></a>
@@ -55,7 +55,7 @@
 | Project | What I fixed | PR |
 | --- | --- | --- |
 | **PyTorch** | int32 overflow in the `cdist` CUDA backward kernel, where indices wrapped negative past 2³¹ into an illegal memory access | [#198452](https://github.com/pytorch/pytorch/pull/198452) |
-| **LLVM** | the Attributor's `AAPointerInfo` tracked non-pointer casts as pointers and asserted at PHIs; it now follows only address-space casts | [#225290](https://github.com/llvm/llvm-project/pull/225290) |
+| **LLVM** | ValueTracking proves `x != y` from any condition on `x - y` that excludes zero (Alive2-verified); the Attributor's `AAPointerInfo` tracked non-pointer casts as pointers and asserted at PHIs, and now follows only address-space casts | [#225200](https://github.com/llvm/llvm-project/pull/225200) · [#225290](https://github.com/llvm/llvm-project/pull/225290) |
 | **JAX** | `jax.scipy.linalg.lu` accepts the batched `(..., M, N)` inputs its documentation promises | [#40931](https://github.com/jax-ml/jax/pull/40931) |
 | **Triton** | nested-loop fusion trusted an `llvm.assume` outside the loop and dropped a zero-trip guard; fp64 `atomic_xchg` on AMD buffer atomics crashed codegen | [#11521](https://github.com/triton-lang/triton/pull/11521) · [#11904](https://github.com/triton-lang/triton/pull/11904) |
 | **Apache TVM** | ONNX Hardmax lowers when the reduced axis has a symbolic extent | [#20416](https://github.com/apache/tvm/pull/20416) |
