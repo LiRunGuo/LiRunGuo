@@ -76,8 +76,8 @@ Every fix ships with a reproducer or regression test. Write-ups for each one are
 - **Certified Sparse Attention** — [*Certified Sparse Attention via Perturbed Retrieval*](https://arxiv.org/abs/2610.24991) — single author, arXiv 2026
 - **BreadthKV** — [*Spend Bytes on Breadth: Precision–Count Trade-offs for Decode-Time KV Compression in Long Chain-of-Thought Reasoning*](https://arxiv.org/abs/2610.05685) — single author, arXiv 2026
 - **FinVault** — [*Benchmarking Financial Agent Safety in Execution-Grounded Environments*](https://arxiv.org/abs/2601.07853) — co-first author, arXiv 2026 · [code](https://github.com/aifinlab/FinVault)
-- **RVCFT** — [*Reasoning-Visual Critical Token Fine-Tuning for Multimodal Reasoning*](https://runguoli.com/publication/2026-07-rvcft) — co-first author, under review at AAAI 2027
-- **VeriBRT** — [*Plan-Guided, Evidence-Based Automated Bug Reproduction*](https://runguoli.com/publication/2026-07-veribrt) — co-first author, under review at ICSE 2027
+- **RVCFT** — [*Reasoning-Visual Critical Token Fine-Tuning for Multimodal Reasoning*](https://runguoli.com/publication/2026-07-rvcft) — co-first author, under review
+- **VeriBRT** — [*Plan-Guided, Evidence-Based Automated Bug Reproduction*](https://runguoli.com/publication/2026-07-veribrt) — co-first author, under review
 
 ### 🧰 Building
 
