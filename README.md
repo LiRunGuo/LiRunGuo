@@ -73,6 +73,8 @@ Every fix ships with a reproducer or regression test. Write-ups for each one are
 
 ### 📝 Papers
 
+- **AXR** — [*AXR: Reusing Intermediate Results for LLM Agents in PostgreSQL*](https://runguoli.com/publication/2026-10-axr) — single author, under review
+- **GPTQ under random rotation** — [*How Much Does Random Rotation Help GPTQ? Sharp Worst-Case Rate Gaps in the High-Rate Regime*](https://runguoli.com/publication/2026-10-gptq-rotation) — single author, under review
 - **Certified Sparse Attention** — [*Certified Sparse Attention via Perturbed Retrieval*](https://arxiv.org/abs/2610.24991) — single author, arXiv 2026
 - **BreadthKV** — [*Spend Bytes on Breadth: Precision–Count Trade-offs for Decode-Time KV Compression in Long Chain-of-Thought Reasoning*](https://arxiv.org/abs/2610.05685) — single author, arXiv 2026
 - **FinVault** — [*Benchmarking Financial Agent Safety in Execution-Grounded Environments*](https://arxiv.org/abs/2601.07853) — co-first author, arXiv 2026 · [code](https://github.com/aifinlab/FinVault)
