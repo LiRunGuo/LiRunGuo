@@ -16,7 +16,7 @@
 
 ### 👋 About me
 
-- 🎓 M.S. in Information Science at **UIUC**, applying to **Ph.D. programs in ML systems for Fall 2028**.
+- 🎓 M.S. in Information Management at **UIUC**, applying to **Ph.D. programs in ML systems for Fall 2028**.
 - ⚙️ I work between the model and the machine: MoE inference and expert streaming, KV-cache compression, distributed training and RL rollout, GPU compilers and kernels.
 - 🔬 Upstream-first: reproduce the failure in the real stack, fix it there, and ship the regression test with before/after numbers.
 
