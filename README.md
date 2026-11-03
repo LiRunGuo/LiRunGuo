@@ -73,13 +73,12 @@ Every fix ships with a reproducer or regression test. Write-ups for each one are
 
 ### 📝 Papers
 
-- **AXR** — [*AXR: Reusing Intermediate Results for LLM Agents in PostgreSQL*](https://runguoli.com/publication/2026-10-axr) — single author, under review
-- **GPTQ under random rotation** — [*How Much Does Random Rotation Help GPTQ? Sharp Worst-Case Rate Gaps in the High-Rate Regime*](https://runguoli.com/publication/2026-10-gptq-rotation) — single author, under review
+- **GPTQ under random rotation** — [*How Much Does Random Rotation Help GPTQ? Sharp Worst-Case Rate Gaps in the High-Rate Regime*](https://arxiv.org/abs/2611.01669) — single author, under review
+- **Recency Is the Wrong Axis** — [*Recency Is the Wrong Axis: A Negative Result on Windowed Deepest-Plane KV Caching in Looped Language Models*](https://arxiv.org/abs/2610.34436) — co-author, arXiv 2026
+- **ScaleRLT** — [*ScaleRLT: Exact Log-Probabilities and Fast Deferred Rollouts for Reinforcement Learning on Looped Transformers*](https://arxiv.org/abs/2610.34427) — co-author, arXiv 2026
 - **Certified Sparse Attention** — [*Certified Sparse Attention via Perturbed Retrieval*](https://arxiv.org/abs/2610.24991) — single author, arXiv 2026
 - **BreadthKV** — [*Spend Bytes on Breadth: Precision–Count Trade-offs for Decode-Time KV Compression in Long Chain-of-Thought Reasoning*](https://arxiv.org/abs/2610.05685) — single author, arXiv 2026
 - **FinVault** — [*Benchmarking Financial Agent Safety in Execution-Grounded Environments*](https://arxiv.org/abs/2601.07853) — co-first author, arXiv 2026 · [code](https://github.com/aifinlab/FinVault)
-- **RVCFT** — [*Reasoning-Visual Critical Token Fine-Tuning for Multimodal Reasoning*](https://runguoli.com/publication/2026-07-rvcft) — co-first author, under review
-- **VeriBRT** — [*Plan-Guided, Evidence-Based Automated Bug Reproduction*](https://runguoli.com/publication/2026-07-veribrt) — co-first author, under review
 
 ### 🧰 Building
 
