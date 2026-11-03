@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/typing.svg" alt="Streaming MoE experts from disk to GPU · Compressing KV caches for long chain-of-thought · Fixing kernels in PyTorch, vLLM, Triton and LLVM · Applying to Ph.D. programs for Fall 2028">
+  <img src="assets/typing.svg" alt="Streaming MoE experts from disk to GPU · Compressing KV caches for long chain-of-thought · Fixing kernels in vLLM, FlashInfer, Triton and LLVM · Applying to Ph.D. programs for Fall 2028">
 </p>
 
 <p align="center">
@@ -20,24 +20,24 @@
 - ⚙️ I work between the model and the machine: MoE inference and expert streaming, KV-cache compression, distributed training and RL rollout, GPU compilers and kernels.
 - 🔬 Upstream-first: reproduce the failure in the real stack, fix it there, and ship the regression test with before/after numbers.
 
-### 🛠️ Merged upstream — 22 PRs across 14 projects
+### 🛠️ Public merged upstream — 22 PRs across 14 projects
 
 <p align="center">
-  <a href="https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"></a>
-  <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/vLLM-30A2FF?style=for-the-badge" alt="vLLM"></a>
-  <a href="https://github.com/llvm/llvm-project/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/LLVM-262D3A?style=for-the-badge&logo=llvm&logoColor=white" alt="LLVM"></a>
-  <a href="https://github.com/deepspeedai/DeepSpeed/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/DeepSpeed-0078D4?style=for-the-badge" alt="DeepSpeed"></a>
-  <a href="https://github.com/jax-ml/jax/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/JAX-5E97F6?style=for-the-badge" alt="JAX"></a>
-  <a href="https://github.com/sgl-project/sglang/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/SGLang-F5A623?style=for-the-badge" alt="SGLang"></a>
-  <a href="https://github.com/Dao-AILab/flash-attention/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/FlashAttention-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="FlashAttention"></a>
+  <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/vLLM-30A2FF?style=for-the-badge" alt="vLLM"></a>
+  <a href="https://github.com/JustVugg/colibri/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/colibri-10B981?style=for-the-badge" alt="colibri"></a>
+  <a href="https://github.com/deepspeedai/DeepSpeed/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/DeepSpeed-0078D4?style=for-the-badge" alt="DeepSpeed"></a>
+  <a href="https://github.com/llvm/llvm-project/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/LLVM-262D3A?style=for-the-badge&logo=llvm&logoColor=white" alt="LLVM"></a>
+  <a href="https://github.com/sgl-project/sglang/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/SGLang-F5A623?style=for-the-badge" alt="SGLang"></a>
+  <a href="https://github.com/jax-ml/jax/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/JAX-5E97F6?style=for-the-badge" alt="JAX"></a>
+  <a href="https://github.com/Dao-AILab/flash-attention/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/FlashAttention-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="FlashAttention"></a>
   <br>
-  <a href="https://github.com/triton-lang/triton/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/Triton-6E40C9?style=for-the-badge" alt="Triton"></a>
-  <a href="https://github.com/apache/tvm/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/Apache_TVM-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache TVM"></a>
-  <a href="https://github.com/verl-project/verl/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/verl-7C3AED?style=for-the-badge" alt="verl"></a>
-  <a href="https://github.com/NVIDIA/Megatron-LM/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/Megatron--LM-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="Megatron-LM"></a>
-  <a href="https://github.com/LMCache/LMCache/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/LMCache-0EA5E9?style=for-the-badge" alt="LMCache"></a>
-  <a href="https://github.com/vllm-project/vllm-omni/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/vLLM--Omni-1D4ED8?style=for-the-badge" alt="vLLM-Omni"></a>
-  <a href="https://github.com/JustVugg/colibri/pulls?q=is%3Apr+author%3ALiRunGuo"><img src="https://img.shields.io/badge/colibri-10B981?style=for-the-badge" alt="colibri"></a>
+  <a href="https://github.com/verl-project/verl/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/verl-7C3AED?style=for-the-badge" alt="verl"></a>
+  <a href="https://github.com/triton-lang/triton/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/Triton-6E40C9?style=for-the-badge" alt="Triton"></a>
+  <a href="https://github.com/NVIDIA/Megatron-LM/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/Megatron--LM-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="Megatron-LM"></a>
+  <a href="https://github.com/apache/tvm/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/Apache_TVM-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache TVM"></a>
+  <a href="https://github.com/LMCache/LMCache/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/LMCache-0EA5E9?style=for-the-badge" alt="LMCache"></a>
+  <a href="https://github.com/vllm-project/vllm-omni/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/vLLM--Omni-1D4ED8?style=for-the-badge" alt="vLLM-Omni"></a>
+  <a href="https://github.com/flashinfer-ai/flashinfer/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/FlashInfer-06B6D4?style=for-the-badge" alt="FlashInfer"></a>
 </p>
 
 #### ⚡ Inference and serving
@@ -50,12 +50,12 @@
 | **vLLM-Omni** | block-sparse attention in the Qwen2.5-Omni Token2Wav DiT, replacing a dense mask over 4,000 keys (DiT 10.8 s → 2.87 s); a stray audio placeholder is rejected instead of crashing the engine | [#7975](https://github.com/vllm-project/vllm-omni/pull/7975) · [#7959](https://github.com/vllm-project/vllm-omni/pull/7959) |
 | **LMCache** | the allocator rejects invalid sizes instead of silently emptying the cache; lazy `%`-format logging enforced | [#5117](https://github.com/LMCache/LMCache/pull/5117) · [#5125](https://github.com/LMCache/LMCache/pull/5125) |
 | **colibri** | multi-drive expert streaming for the 510 GB DeepSeek-V4.1 container; OpenMP team sizing in four engines that were 18.7× slower without it; plan and engine made to agree | [#1522](https://github.com/JustVugg/colibri/pull/1522) · [#1517](https://github.com/JustVugg/colibri/pull/1517) · [#1526](https://github.com/JustVugg/colibri/pull/1526) |
+| **FlashInfer** | strided `indptr` / `indices` / `last_page_len` metadata is made contiguous in `plan()`, preventing illegal memory accesses and wrong output across ragged, paged, and sparse attention backends | [#5385](https://github.com/flashinfer-ai/flashinfer/pull/5385) |
 
 #### 🧩 Compilers and frameworks
 
 | Project | What I fixed | PR |
 | --- | --- | --- |
-| **PyTorch** | int32 overflow in the `cdist` CUDA backward kernel, where indices wrapped negative past 2³¹ into an illegal memory access | [#198452](https://github.com/pytorch/pytorch/pull/198452) |
 | **LLVM** | ValueTracking proves `x != y` from any condition on `x - y` that excludes zero (Alive2-verified); the Attributor's `AAPointerInfo` tracked non-pointer casts as pointers and asserted at PHIs, and now follows only address-space casts | [#225200](https://github.com/llvm/llvm-project/pull/225200) · [#225290](https://github.com/llvm/llvm-project/pull/225290) |
 | **JAX** | `jax.scipy.linalg.lu` accepts the batched `(..., M, N)` inputs its documentation promises | [#40931](https://github.com/jax-ml/jax/pull/40931) |
 | **Triton** | nested-loop fusion trusted an `llvm.assume` outside the loop and dropped a zero-trip guard; fp64 `atomic_xchg` on AMD buffer atomics crashed codegen | [#11521](https://github.com/triton-lang/triton/pull/11521) · [#11904](https://github.com/triton-lang/triton/pull/11904) |

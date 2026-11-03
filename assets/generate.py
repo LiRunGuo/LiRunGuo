@@ -78,7 +78,7 @@ header = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width
     <text x="{W / 2}" y="158" font-size="26" fill="#e2e8f0" opacity="0">ML Systems for Large Models
       <animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="1.2s" fill="freeze"/>
     </text>
-    <text x="{W / 2}" y="196" font-size="17" font-family="{MONO}" fill="#94a3b8" opacity="0">M.S. @ UIUC  ·  22 merged upstream PRs  ·  Ph.D. applicant, Fall 2028
+    <text x="{W / 2}" y="196" font-size="17" font-family="{MONO}" fill="#94a3b8" opacity="0">M.S. @ UIUC  ·  22 public merged upstream PRs  ·  Ph.D. applicant, Fall 2028
       <animate attributeName="opacity" from="0" to="1" begin="1s" dur="1.2s" fill="freeze"/>
     </text>
   </g>
@@ -90,7 +90,7 @@ open(os.path.join(out, "header.svg"), "w").write(header)
 LINES = [
     "Streaming MoE experts from disk to GPU",
     "Compressing KV caches for long chain-of-thought",
-    "Fixing kernels in PyTorch, vLLM, Triton and LLVM",
+    "Fixing kernels in vLLM, FlashInfer, Triton and LLVM",
     "Applying to Ph.D. programs for Fall 2028",
 ]
 FS, CW = 20, 12.0          # font size and forced advance per character
