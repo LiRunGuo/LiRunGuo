@@ -20,9 +20,10 @@
 - ⚙️ I work between the model and the machine: MoE inference and expert streaming, KV-cache compression, distributed training and RL rollout, GPU compilers and kernels.
 - 🔬 Upstream-first: reproduce the failure in the real stack, fix it there, and ship the regression test with before/after numbers.
 
-### 🛠️ Public merged upstream — 22 PRs across 14 projects
+### 🛠️ Public merged upstream — 26 PRs across 16 projects
 
 <p align="center">
+  <a href="https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"></a>
   <a href="https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/vLLM-30A2FF?style=for-the-badge" alt="vLLM"></a>
   <a href="https://github.com/JustVugg/colibri/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/colibri-10B981?style=for-the-badge" alt="colibri"></a>
   <a href="https://github.com/deepspeedai/DeepSpeed/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/DeepSpeed-0078D4?style=for-the-badge" alt="DeepSpeed"></a>
@@ -38,6 +39,7 @@
   <a href="https://github.com/LMCache/LMCache/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/LMCache-0EA5E9?style=for-the-badge" alt="LMCache"></a>
   <a href="https://github.com/vllm-project/vllm-omni/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/vLLM--Omni-1D4ED8?style=for-the-badge" alt="vLLM-Omni"></a>
   <a href="https://github.com/flashinfer-ai/flashinfer/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/FlashInfer-06B6D4?style=for-the-badge" alt="FlashInfer"></a>
+  <a href="https://github.com/uccl-project/uccl/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/UCCL-334155?style=for-the-badge" alt="UCCL"></a>
 </p>
 
 #### ⚡ Inference and serving
@@ -68,6 +70,13 @@
 | **DeepSpeed** | ZeRO-3 rollout deadlock from unsynchronized generation stopping; Hybrid Engine falls back on unsupported architectures (H200, MI250) | [#8264](https://github.com/deepspeedai/DeepSpeed/pull/8264) · [#8265](https://github.com/deepspeedai/DeepSpeed/pull/8265) |
 | **Megatron-LM** | MoE checkpoint shards with prepended layer/expert axes take the DCP checkpointable path instead of enumerating the global shard grid: state-dict conversion 165× faster, async-save blocking 3.4× shorter on 8×H200, identical metadata | [#7287](https://github.com/NVIDIA/Megatron-LM/pull/7287) |
 | **verl** | FSDP value-head critic loading restored after TRL relocated its value-head classes | [#7625](https://github.com/verl-project/verl/pull/7625) |
+
+#### 🧵 Distributed systems and networking
+
+| Project | What I fixed | PR |
+| --- | --- | --- |
+| **Kubernetes** | attach/detach reconciler tests now stop their goroutines before asserting the global force-detach metric, eliminating cross-test flakiness under CPU contention | [#142385](https://github.com/kubernetes/kubernetes/pull/142385) |
+| **UCCL** | RDMA flush requests are initialized before posting or returning; EQDS retransmissions refresh stale pull targets and reported/spendable credits stay consistent, with host and GPU regression tests | [#1106](https://github.com/uccl-project/uccl/pull/1106) · [#1107](https://github.com/uccl-project/uccl/pull/1107) · [#1108](https://github.com/uccl-project/uccl/pull/1108) |
 
 Every fix ships with a reproducer or regression test. Write-ups for each one are in the [portfolio](https://runguoli.com/portfolio/).
 
