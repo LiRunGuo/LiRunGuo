@@ -82,12 +82,21 @@ Every fix ships with a reproducer or regression test. Write-ups for each one are
 
 ### 📝 Papers
 
-- **GPTQ under random rotation** — [*How Much Does Random Rotation Help GPTQ? Sharp Worst-Case Rate Gaps in the High-Rate Regime*](https://arxiv.org/abs/2611.01669) — single author, under review
-- **Recency Is the Wrong Axis** — [*Recency Is the Wrong Axis: A Negative Result on Windowed Deepest-Plane KV Caching in Looped Language Models*](https://arxiv.org/abs/2610.34436) — co-author, arXiv 2026
+#### Selected
+
+- **FinVault** — [*FinVault: Benchmarking financial agent safety in execution-grounded environments*](https://arxiv.org/abs/2601.07853) — co-first author, arXiv 2026 · [code](https://github.com/aifinlab/FinVault)
+- **The Last Mile to the Real World** — [*The Last Mile to the Real World: Agent-Native Primitives as Reusable Building Blocks for Solving Real-World Tasks*](https://arxiv.org/abs/2611.07461) — co-author, arXiv 2026
+- **GPTQ under random rotation** — [*How Much Does Random Rotation Help GPTQ? Sharp Worst-Case Rate Gaps in the High-Rate Regime*](https://arxiv.org/abs/2611.01669) — first author, arXiv 2026
+- **Weight Placement Is Not Enough** — [*Weight Placement Is Not Enough: Synchronization in Multi-Node CPU Decoding of Ternary LLMs*](https://arxiv.org/abs/2610.28620) — first author, arXiv 2026
+- **Certified Sparse Attention** — [*Certified Sparse Attention via Perturbed Retrieval*](https://arxiv.org/abs/2610.24991) — first author, arXiv 2026
+- **BreadthKV** — [*Spend Bytes on Breadth: Precision-Count Trade-offs for Decode-Time KV Compression in Long Chain-of-Thought Reasoning*](https://arxiv.org/abs/2610.05685) — first author, arXiv 2026
+
+#### Additional
+
+- **What Sets the Serving Speed of Looped Language Models?** — [*Measurements and Optimizations Graded by Exactness*](https://arxiv.org/abs/2611.05150) — co-author, arXiv 2026
+- **Where KV-Cache Error Lives in Looped Language Models** — [*A Diagnostic Study of Ouro and Huginn*](https://arxiv.org/abs/2610.41825) — co-author, arXiv 2026
+- **Prefix Keys and Values Matter Late** — [*RIPE Caching for Self-Speculative Decoding in Looped Language Models*](https://arxiv.org/abs/2610.34436) — co-author, arXiv 2026
 - **ScaleRLT** — [*ScaleRLT: Exact Log-Probabilities and Fast Deferred Rollouts for Reinforcement Learning on Looped Transformers*](https://arxiv.org/abs/2610.34427) — co-author, arXiv 2026
-- **Certified Sparse Attention** — [*Certified Sparse Attention via Perturbed Retrieval*](https://arxiv.org/abs/2610.24991) — single author, arXiv 2026
-- **BreadthKV** — [*Spend Bytes on Breadth: Precision–Count Trade-offs for Decode-Time KV Compression in Long Chain-of-Thought Reasoning*](https://arxiv.org/abs/2610.05685) — single author, arXiv 2026
-- **FinVault** — [*Benchmarking Financial Agent Safety in Execution-Grounded Environments*](https://arxiv.org/abs/2601.07853) — co-first author, arXiv 2026 · [code](https://github.com/aifinlab/FinVault)
 
 ### 🧰 Building
 
