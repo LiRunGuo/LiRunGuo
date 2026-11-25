@@ -20,7 +20,7 @@
 - ⚙️ I work between the model and the machine: MoE inference and expert streaming, KV-cache compression, distributed training and RL rollout, GPU compilers and kernels.
 - 🔬 Upstream-first: reproduce the failure in the real stack, fix it there, and ship the regression test with before/after numbers.
 
-### 🛠️ Public merged upstream — 26 PRs across 16 projects
+### 🛠️ Public merged upstream — 30 PRs across 17 projects, plus 8 adopted fixes
 
 <p align="center">
   <a href="https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"></a>
@@ -40,6 +40,7 @@
   <a href="https://github.com/vllm-project/vllm-omni/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/vLLM--Omni-1D4ED8?style=for-the-badge" alt="vLLM-Omni"></a>
   <a href="https://github.com/flashinfer-ai/flashinfer/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/FlashInfer-06B6D4?style=for-the-badge" alt="FlashInfer"></a>
   <a href="https://github.com/uccl-project/uccl/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/UCCL-334155?style=for-the-badge" alt="UCCL"></a>
+  <a href="https://github.com/linkedin/Liger-Kernel/pulls?q=is%3Apr+author%3ALiRunGuo+is%3Amerged"><img src="https://img.shields.io/badge/Liger--Kernel-0A66C2?style=for-the-badge" alt="Liger-Kernel"></a>
 </p>
 
 #### ⚡ Inference and serving
@@ -67,18 +68,46 @@
 
 | Project | What I fixed | PR |
 | --- | --- | --- |
-| **DeepSpeed** | ZeRO-3 rollout deadlock from unsynchronized generation stopping; Hybrid Engine falls back on unsupported architectures (H200, MI250) | [#8264](https://github.com/deepspeedai/DeepSpeed/pull/8264) · [#8265](https://github.com/deepspeedai/DeepSpeed/pull/8265) |
+| **DeepSpeed** | ZeRO-3 rollout deadlock from unsynchronized generation stopping; Hybrid Engine falls back on unsupported architectures (H200, MI250); rollout early stopping synchronized across ZeRO-3 subgroups; GPT-NeoX QKV layout changes kept through ZeRO-3 repartitioning | [#8264](https://github.com/deepspeedai/DeepSpeed/pull/8264) · [#8265](https://github.com/deepspeedai/DeepSpeed/pull/8265) · [#8390](https://github.com/deepspeedai/DeepSpeed/pull/8390) · [#8392](https://github.com/deepspeedai/DeepSpeed/pull/8392) |
 | **Megatron-LM** | MoE checkpoint shards with prepended layer/expert axes take the DCP checkpointable path instead of enumerating the global shard grid: state-dict conversion 165× faster, async-save blocking 3.4× shorter on 8×H200, identical metadata | [#7287](https://github.com/NVIDIA/Megatron-LM/pull/7287) |
 | **verl** | FSDP value-head critic loading restored after TRL relocated its value-head classes | [#7625](https://github.com/verl-project/verl/pull/7625) |
+| **Liger-Kernel** | cross-entropy no longer overwrites caller-owned logits for ignored targets when no gradient is needed | [#1604](https://github.com/linkedin/Liger-Kernel/pull/1604) |
 
 #### 🧵 Distributed systems and networking
 
 | Project | What I fixed | PR |
 | --- | --- | --- |
 | **Kubernetes** | attach/detach reconciler tests now stop their goroutines before asserting the global force-detach metric, eliminating cross-test flakiness under CPU contention | [#142385](https://github.com/kubernetes/kubernetes/pull/142385) |
-| **UCCL** | RDMA flush requests are initialized before posting or returning; EQDS retransmissions refresh stale pull targets and reported/spendable credits stay consistent, with host and GPU regression tests | [#1106](https://github.com/uccl-project/uccl/pull/1106) · [#1107](https://github.com/uccl-project/uccl/pull/1107) · [#1108](https://github.com/uccl-project/uccl/pull/1108) |
+| **UCCL** | RDMA flush requests are initialized before posting or returning; EQDS retransmissions refresh stale pull targets and reported/spendable credits stay consistent; EQDS grant pacing stops at either the sender or credit budget, with regression tests | [#1106](https://github.com/uccl-project/uccl/pull/1106) · [#1107](https://github.com/uccl-project/uccl/pull/1107) · [#1108](https://github.com/uccl-project/uccl/pull/1108) · [#1130](https://github.com/uccl-project/uccl/pull/1130) |
 
-Every fix ships with a reproducer or regression test. Write-ups for each one are in the [portfolio](https://runguoli.com/portfolio/).
+#### ✅ Adopted upstream
+
+Some fixes reached mainline as equivalent commits after the original PR was closed unmerged.
+
+| Project | What I fixed | Upstream commit |
+| --- | --- | --- |
+| **PyTorch** | cdist CUDA backward int32 index overflow (from [#198452](https://github.com/pytorch/pytorch/pull/198452)) | [d5b1941b02](https://github.com/pytorch/pytorch/commit/d5b1941b02) |
+| **PyTorch** | adaptive max pool CUDA int32 plane offset overflow (from [#198496](https://github.com/pytorch/pytorch/pull/198496)) | [5e46c2b907](https://github.com/pytorch/pytorch/commit/5e46c2b907) |
+| **NVIDIA NCCL** | release the imported SHM segment in CE memcpy mode (from [#2432](https://github.com/NVIDIA/nccl/pull/2432)) | [066b8d0ca7](https://github.com/NVIDIA/nccl/commit/066b8d0ca7) |
+| **NVIDIA NCCL** | return a NULL handle when CPU-backed buffer registration is skipped (from [#2433](https://github.com/NVIDIA/nccl/pull/2433)) | [e9de4c6193](https://github.com/NVIDIA/nccl/commit/e9de4c6193) |
+| **NVIDIA NCCL** | cap P2P channels by maxCTAs after rounding to a power of two (from [#2435](https://github.com/NVIDIA/nccl/pull/2435)) | [36807e4af7](https://github.com/NVIDIA/nccl/commit/36807e4af7) |
+| **NVIDIA NCCL** | size GIN signal shadows by allocated context count (from [#2436](https://github.com/NVIDIA/nccl/pull/2436)) | [d02f9daa69](https://github.com/NVIDIA/nccl/commit/d02f9daa69) |
+| **NVIDIA NCCL** | wire NVLS buffers per channel so a shared parent works (from [#2431](https://github.com/NVIDIA/nccl/pull/2431)) | [ae8dbba546](https://github.com/NVIDIA/nccl/commit/ae8dbba546) |
+| **NVIDIA NCCL** | reject pre-posted receives that lack ID-based matching (from [#2434](https://github.com/NVIDIA/nccl/pull/2434)) | [1b872a8bf7](https://github.com/NVIDIA/nccl/commit/1b872a8bf7) |
+
+#### 🔁 Reported issues resolved upstream by other changes
+
+| Project | Issue | How upstream resolved it |
+| --- | --- | --- |
+| **NVIDIA NCCL** | [#2437](https://github.com/NVIDIA/nccl/pull/2437) | proxy context selection fixed in core ([992ae773](https://github.com/NVIDIA/nccl/commit/992ae7731f)) |
+| **Apache TVM → TIRx** | [TVM #20414](https://github.com/apache/tvm/pull/20414) → [TIRx #177](https://github.com/apache/tvm-tirx/pull/177) | code moved to TIRx; broader fix in [TIRx #216](https://github.com/apache/tvm-tirx/pull/216) |
+| **LMCache** | [#6429](https://github.com/LMCache/LMCache/pull/6429) | empty shared-pool usage reporting fixed by [#6088](https://github.com/LMCache/LMCache/pull/6088) |
+| **FlashInfer** | [#5388](https://github.com/flashinfer-ai/flashinfer/pull/5388) | cuDNN paged prefill LSE and default sm_scale covered by [#5350](https://github.com/flashinfer-ai/flashinfer/pull/5350) |
+| **FlashInfer** | [#5401](https://github.com/flashinfer-ai/flashinfer/pull/5401) | CUDA Graph root cause fixed in CUTLASS ragged prefill by [#5975](https://github.com/flashinfer-ai/flashinfer/pull/5975) |
+| **TensorRT-Model-Connect** | [#1415](https://github.com/NVIDIA/TensorRT-Model-Connect/pull/1415) | `local_files_only=True` for the Qwen offline test landed via [#1059](https://github.com/NVIDIA/TensorRT-Model-Connect/pull/1059) |
+| **Cordis** | [#148](https://github.com/cordiverse/cordis/pull/148) | replaced by a different fiber-epoch implementation, [#189](https://github.com/cordiverse/cordis/pull/189) |
+
+Every merged fix ships with a reproducer or regression test. Write-ups for each one are in the [portfolio](https://runguoli.com/portfolio/).
 
 ### 📝 Papers
 
